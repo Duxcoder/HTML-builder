@@ -13,7 +13,7 @@ readdir(pathDir, { withFileTypes: true }, (err, files) => {
         fs.stat(path.join(pathDir, file.name), (err, stats) => {
           if (err) console.log(err);
           const size = (stats.size / 1024).toFixed(3);
-          console.log(`${fileName} - ${ext.slice(1)} - ${size}kb`);
+          console.log(`${fileName} - ${ext.slice(1)} - ${size}KB`);
         })
       }
     })
