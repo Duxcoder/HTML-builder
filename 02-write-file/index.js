@@ -8,7 +8,7 @@ const url = path.join(__dirname, 'text.txt')
 
 fs.writeFile(url, '', (err) => {
   if (err) throw err;
-  console.log('Хай, как ты сюда забрёл друг? Ну-ка расскажи мне в консоли...' + os.EOL);
+  console.log('Хай, как ты сюда забрёл друг? Ну-ка расскажи мне в консоли...');
 });
 
 process.on('exit', () => {
@@ -26,6 +26,6 @@ stdin.on('data', data => {
 });
 
 process.on('SIGINT', () => {
-  console.log(os.EOL);
+  console.log('');
   process.exit()
 });
