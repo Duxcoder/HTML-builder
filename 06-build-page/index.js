@@ -23,7 +23,7 @@ const getComponents = function () {
         const pathFile = path.join(pathComponents, file)
         return fsp.readFile(pathFile)
           .then((html) => {
-            return [name, html.toString()]
+            return [name, html.toString()];
           })
       })
       return Promise.all(components);
@@ -34,17 +34,17 @@ const insertComponents = function (path) {
   const components = getComponents();
   return fsp.readFile(path)
     .then((htmlCode) => {
-      return htmlCode.toString()
+      return htmlCode.toString();
     })
     .then((htmlCode) => {
       return components
         .then(components => {
-          let html = htmlCode
+          let html = htmlCode;
           for (const component of components) {
-            const [nameComponent, htmlComponent] = component
+            const [nameComponent, htmlComponent] = component;
             html = html.replace(`{{${nameComponent}}}`, htmlComponent);
           }
-          return html
+          return html;
         })
     })
 }
